@@ -1,0 +1,7 @@
+@media only screen and (max-device-width: 480px) {
+        
+    .main-container {
+        height: 100%;
+        grid-template: 1fr 1fr 1fr / 1fr; /* row / column */
+    }
+}
