@@ -7,6 +7,7 @@
     --ears: #ed927d;
     --ears-shadow: #ea686c;
     --background: #ed4042;
+    --head-shadow: #f4b196;
 }
 
 * {
@@ -16,24 +17,39 @@
 
 body {
     background-color: var(--background);
-}
-
-.container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    width: 100%;
 }
 
-.head {
+.main-container {
+    width: 95%;
+    height: 400px;
+    display: grid;
+    grid-template: 1fr / 1fr 1fr 1fr; /* row / column */
+}
+
+.first-container, 
+.second-container,
+.third-container {
+    margin-top: -60px;
+    justify-self: center;
+    align-self: center;
+}
+
+.first-container .head, 
+.second-container .head,
+.third-container .head {
     background-color: var(--skin);
     width: 130px;
-    height: 250px;
+    height: 220px;
     border-radius: 65px;
     position: relative;
 }
 
-.eyebrow {
+.first-container .eyebrow {
     background-color: var(--skin);
     width: 80px;
     height: 15px;
@@ -43,13 +59,14 @@ body {
     z-index: 1;
 }
 
-.eye-left {
+.first-container .eye-left,
+.second-container .eye-left {
     background-color: var(--eye);
     width: 35px;
     height: 35px;
     border-radius: 50%;
     position: absolute;
-    left: 30px;
+    left: 32px;
     top: 53px;
     display: flex;
     align-items: center;
@@ -57,7 +74,8 @@ body {
     
 }
 
-.eye-right {
+.first-container .eye-right,
+.second-container .eye-right {
     background-color: var(--eye);
     width: 35px;
     height: 35px;
@@ -71,14 +89,17 @@ body {
     
 }
 
-.iris-left, .iris-right {
+.first-container .iris-left, 
+.first-container .iris-right, 
+.second-container .iris-left, 
+.second-container .iris-right {
     background-color: var(--beard);
     width: 6px;
     height: 6px;
     border-radius: 3px;
 }
 
-.nose {
+.first-container .nose {
     background-color: var(--skin);
     width: 40px;
     height: 40px;
@@ -89,16 +110,16 @@ body {
     z-index: 2;
 }
 
-.beard {
+.first-container .beard {
     background-color: var(--beard);
     width: 130px;
     height: 160px;
     border-radius: 40px 40px 63px 63px;
     position: absolute;
-    bottom: -10px;
+    bottom: -40px;
 }
 
-.mouth {
+.first-container .mouth {
     background-color: var(--mouth);
     width: 60px;
     height: 35px;
@@ -109,7 +130,7 @@ body {
     overflow: hidden;
 }
 
-.teeth {
+.first-container .teeth {
     background-color: var(--eye);
     width: 60px;
     height: 15px;
@@ -119,7 +140,7 @@ body {
     top: -4px;
 }
 
-.tongue {
+.first-container .tongue {
     background-color: var(--tongue);
     width: 60px;
     height: 30px;
@@ -129,17 +150,21 @@ body {
     bottom:-12px;
 }
 
-.neck {
+.first-container .neck,
+.second-container .neck,
+.third-container .neck {
     background-color: var(--ears);
     width: 90px;
-    height: 60px;
+    height: 80px;
     left: 20px;
-    top: 220px;
+    top: 200px;
     position: absolute;
     z-index: -1;
 }
 
-.ear-left {
+.first-container .ear-left,
+.second-container .ear-left,
+.third-container .ear-left {
     background-color: var(--ears);
     width: 40px;
     height: 30px;
@@ -150,9 +175,12 @@ body {
     z-index: -1;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
-.ear-right {
+.first-container .ear-right,
+.second-container .ear-right,
+.third-container .ear-right {
     background-color: var(--ears);
     width: 40px;
     height: 30px;
@@ -163,9 +191,10 @@ body {
     z-index: -1;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
-.ear-left-shadow-first {
+.first-container .ear-left-shadow-first {
     background-color: var(--ears-shadow);
     width: 15px;
     height: 5px;
@@ -175,7 +204,7 @@ body {
     border-radius: 2.5px;
 }
 
-.ear-left-shadow-second {
+.first-container .ear-left-shadow-second {
     background-color: var(--ears-shadow);
     width: 15px;
     height: 5px;
@@ -185,7 +214,7 @@ body {
     border-radius: 2.5px;
 }
 
-.ear-right-shadow-first {
+.first-container .ear-right-shadow-first {
     background-color: var(--ears-shadow);
     width: 15px;
     height: 5px;
@@ -195,7 +224,7 @@ body {
     border-radius: 2.5px;
 }
 
-.ear-right-shadow-second {
+.first-container .ear-right-shadow-second {
     background-color: var(--ears-shadow);
     width: 15px;
     height: 5px;
@@ -204,3 +233,84 @@ body {
     right: 5px;
     border-radius: 2.5px;
 }
+
+.second-container .head-shadow,
+.third-container .head-shadow {
+    background-color: var(--head-shadow);
+    width: 130px;
+    height: 220px;
+    border-radius: 65px;
+    position: relative;
+}
+
+.second-container .head,
+.third-container .head {
+    height: 180px;
+}
+
+.second-container .nose {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 50px;
+    top: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.second-container .nose .nostril-left {
+    background-color: var(--ears);
+    width: 6px;
+    height: 6px;
+    border-radius: 3px;
+    margin-right: 8px;
+}
+
+.second-container .nose .nostril-right {
+    background-color: var(--ears);
+    width: 6px;
+    height: 6px;
+    border-radius: 3px;
+}
+
+.second-container .mouth {
+    background-color: var(--beard);
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 70px;
+    top: 115px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.second-container .mouth .teeth {
+    background-color: var(--eye);
+    width: 60px;
+    height: 15px;
+    border-radius: 5px;
+    position: absolute;
+    left: -40px;
+    top: -4px;
+}
+
+.second-container .mouth .tongue {
+    background-color: var(--tongue);
+    width: 60px;
+    height: 30px;
+    border-radius: 5px;
+    position: absolute;
+    left: -45px;
+    bottom:-17px;
+}
+
+.second-container .ear-left .ear-shadow, 
+.second-container .ear-right .ear-shadow {
+    background-color: var(--ears-shadow);
+    width: 15px;
+    height: 15px;
+    border-radius: 7.5px;
+}
+
+
