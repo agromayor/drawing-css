@@ -25,7 +25,7 @@ body {
 }
 
 .main-container {
-    width: 95%;
+    width: 90%;
     height: 350px;
     display: grid;
     grid-template: 1fr / 1fr 1fr 1fr; /* row / column */
@@ -36,7 +36,7 @@ body {
 .third-container {
     justify-self: center;
     align-self: flex-start;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .first-container .head, 

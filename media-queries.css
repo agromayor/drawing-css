@@ -1,7 +1,14 @@
-@media only screen and (max-device-width: 480px) {
+@media only screen and (max-device-width: 480px) and (orientation:portrait){
         
     .main-container {
         height: 100%;
         grid-template: 1fr 1fr 1fr / 1fr; /* row / column */
+    }
+}
+
+@media only screen and (max-device-width: 480px) and (orientation:landscape){
+        
+    .main-container {
+        height: 100%;
     }
 }
