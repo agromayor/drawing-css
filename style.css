@@ -401,18 +401,28 @@ body {
     width: 60px;
     height: 70px;
     border-radius: 10px;
-    position: relative;
+    position: absolute;
     left: -20px;
     bottom:-12px;
 }
 
-.third-container .mouth .tongue-shadow {
+.third-container .mouth .tongue-top {
+    background-color: var(--tongue);
+    width: 60px;
+    height: 15px;
+    border-radius: 10px;
+    position: absolute;
+    left: -15px;
+    bottom: 43px;
+}
+
+.third-container .mouth .tongue-rest {
     background-color: var(--beard);
     width: 60px;
     height: 70px;
     border-radius: 10px;
-    position: relative;
-    left: -60px;
-    bottom:-12px;
+    position: absolute;
+    left: 25px;
+    bottom: -27px;
 }
 
